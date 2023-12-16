@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+require "active_support/inflector"
+
+def replace_in_file(file, before, after, target_regexp = nil)
+  puts "Replacing in '#{file}'."
+  if target_regexp
+    target_file_content = ""
+    File.open(file).each_line do |l|
+      l.gsub!(before, after) if !!l.match(target_regexp)
+      l if !!l.match(target_regexp)
+      target_file_content += l
+    end
+  else
+    target_file_content = File.open(file).read
+    target_file_content.gsub!(before, after)
+  end
+  File.open(file, "w+") do |f|
+    f.write(target_file_content)
+  end
+end
+
+def ask(string)
+  puts string
+  gets.strip
+end
+
+human = ask "What is the name of your application? (e.g. \"My app\")"
+while human == ""
+  puts "You must provide a name for your application."
+  human = ask "What is the name of your application? (e.g. \"My app\")"
+end
+
+variable = ActiveSupport::Inflector.parameterize(human.gsub("-", " "), separator: '_')
+class_name = variable.classify
+
+puts ""
+puts "Replacing instances of Head Start with #{human}."
+
+replace_in_file "./config/application.rb", "HeadStart", class_name
+replace_in_file "./config/database.yml", "head_start", variable
+replace_in_file "./config/database.yml", "HEAD_START", variable.upcase
+replace_in_file "./config/cable.yml", "head_start", variable
+replace_in_file "./config/environments/production.rb", "head_start", variable
+replace_in_file "./app/views/layouts/application.html.erb", "HeadStart", class_name
+
+puts ""
