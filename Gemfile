@@ -20,6 +20,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "standard"
+  gem "standard-rails"
   gem "web-console"
 end
 
