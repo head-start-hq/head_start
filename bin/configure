@@ -43,5 +43,6 @@ replace_in_file "./config/database.yml", "HEAD_START", variable.upcase
 replace_in_file "./config/cable.yml", "head_start", variable
 replace_in_file "./config/environments/production.rb", "head_start", variable
 replace_in_file "./app/views/layouts/application.html.erb", "HeadStart", class_name
+replace_in_file "./README.md", "Head start", class_name
 
 puts ""
