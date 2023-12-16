@@ -1,24 +1,14 @@
-# README
+# Head start
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The most basic Rails starter template for your next project.
 
-Things you may want to cover:
+## Features
 
-- Ruby version
+- Lints ruby files with [standard](https://github.com/standardrb/standard)
+- Typescript
+- [Tailwind CSS](https://tailwindcss.com/)
+- Prettier and ESLint
 
-- System dependencies
+## License
 
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+This project is available as open-source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
