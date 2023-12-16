@@ -2,7 +2,6 @@
   "name": "app",
   "private": "true",
   "dependencies": {
-    "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.0-beta.1",
     "autoprefixer": "^10.4.16",
     "esbuild": "^0.19.9",
@@ -12,7 +11,18 @@
     "postcss-nesting": "^12.0.2"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
-    "build:css": "postcss ./app/assets/stylesheets/application.postcss.css -o ./app/assets/builds/application.css"
+    "build": "node esbuild.config.mjs",
+    "build:css": "postcss ./app/assets/stylesheets/application.css -o ./app/assets/builds/application.css",
+    "lint": "eslint 'app/javascript/**/*.ts'",
+    "prettier": "prettier --write --log-level warn ."
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.1.0",
+    "typescript": "^5.2.2"
   }
 }
