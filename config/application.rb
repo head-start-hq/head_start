@@ -16,6 +16,12 @@ module HeadStart
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
+    # Avoid generating these files on scaffold
+    config.generators.stylesheets = false
+    config.generators.helper = false
+    config.generators.helper_specs = false
+    config.generators.test_framework :test_unit, fixture: false
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
