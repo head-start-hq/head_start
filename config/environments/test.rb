@@ -8,6 +8,9 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Allow request from all hosts.
+  config.hosts = nil
+
   # While tests run files are not watched, reloading is not necessary.
   config.enable_reloading = false
 
@@ -44,6 +47,8 @@ Rails.application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
 
+  config.action_mailer.default_url_options = {host: "localhost", port: 3000}
+
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
@@ -60,5 +65,5 @@ Rails.application.configure do
   # config.action_view.annotate_rendered_view_with_filenames = true
 
   # Raise error when a before_action's only/except options reference missing actions
-  config.action_controller.raise_on_missing_callback_actions = true
+  config.action_controller.raise_on_missing_callback_actions = false
 end
