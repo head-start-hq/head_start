@@ -32,7 +32,7 @@ The most basic Rails starter template for your next project.
     rm -rf .git
     git init
     git add .
-    git add -m "Initialize project"
+    git commit -m "Initialize project"
     ```
 
 5. Start your application
