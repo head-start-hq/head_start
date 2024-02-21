@@ -5,9 +5,9 @@ The most basic Rails starter template for your next project.
 ## Features
 
 - Lints ruby files with [standard](https://github.com/standardrb/standard)
+- Lints js/ts files with Prettier and ESLint
 - Typescript
-- [Tailwind CSS](https://tailwindcss.com/)
-- Prettier and ESLint
+- [Tailwind CSS](https://tailwindcss.com/), [devise](https://rubygems.org/gems/devise), [rails_heroicon](https://rubygems.org/gems/rails_heroicon) are setup by default.
 
 ## Getting started
 
@@ -27,12 +27,20 @@ The most basic Rails starter template for your next project.
     ./bin/setup
     ```
 
-4. Start your application
+4. Set up version control
+    ```bash
+    rm -rf .git
+    git init
+    git add .
+    git add -m "Initialize project"
+    ```
+
+5. Start your application
     ```bash
     ./bin/dev
     ```
 
-5. Visit `http://localhost:3000`
+6. Visit `http://localhost:3000`
 
 ## License
 
