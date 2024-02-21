@@ -4,6 +4,7 @@ ruby "3.3.0"
 
 gem "bootsnap", require: false
 gem "cssbundling-rails", "~> 1.3", ">= 1.3.3"
+gem "devise", "~> 4.9", ">= 4.9.3"
 gem "image_processing", "~> 1.2"
 gem "jsbundling-rails"
 gem "pg", "~> 1.1"
