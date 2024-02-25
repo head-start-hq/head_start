@@ -1,30 +1,23 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationMap": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    // Uncomment if using vue
-    // "jsx": "preserve",
-    // "jsxImportSource": "vue",
     "lib": ["ES2017", "dom", "dom.iterable"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "noEmit": true,
-    // Define your paths here
-    // "paths": {
-    //   "~/*": ["./app/javascript/*"]
-    // },
-    // See <https://github.com/vuejs/vue-cli/pull/5688>
-    "skipLibCheck": true,
+    "paths": {
+      "~/*": ["app/javascript/*"]
+    },
+    "sourceMap": false,
     "strict": true,
     "strictPropertyInitialization": false,
     "target": "ESNext",
-    "useDefineForClassFields": false,
-    // <https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#verbatimmodulesyntax>
-    // Any imports or exports without a type modifier are left around. This is important for `<script setup>`.
-    // Anything that uses the type modifier is dropped entirely.
-    "verbatimModuleSyntax": true
+    "useDefineForClassFields": false
   },
   "include": ["app/javascript/**/*"]
 }
