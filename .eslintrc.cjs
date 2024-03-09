@@ -15,7 +15,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['.eslintrc.cjs', '.prettierrc.cjs', 'esbuild.config.mjs', 'postcss.config.cjs', 'tailwind.config.cjs'],
+      files: ['.eslintrc.cjs', '.prettierrc.cjs', 'postcss.config.cjs', 'tailwind.config.cjs'],
       env: {
         node: true,
       },
