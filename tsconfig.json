@@ -11,7 +11,7 @@
     "moduleResolution": "bundler",
     "noEmit": true,
     "paths": {
-      "~/*": ["app/javascript/*"]
+      "~/*": ["app/assets/*"]
     },
     "sourceMap": false,
     "strict": true,
@@ -19,5 +19,5 @@
     "target": "ESNext",
     "useDefineForClassFields": false
   },
-  "include": ["app/javascript/**/*"]
+  "include": ["app/assets/**/*"]
 }
