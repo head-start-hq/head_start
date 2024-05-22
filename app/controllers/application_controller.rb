@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   around_action :set_time_zone, if: :user_signed_in?
 
+  include SetCurrentRequestDetails
+
   rescue_from(ActiveSupport::MessageVerifier::InvalidSignature, with: :render_404)
 
   private
