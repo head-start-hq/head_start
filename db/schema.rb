@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_21_115127) do
     t.string "last_name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "time_zone", default: "UTC", null: false
+    t.string "time_zone_name", default: "UTC", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
