@@ -11,8 +11,6 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   end
 
   def within_dom_id(record, prefix = nil, &block)
-    within "##{dom_id(record, prefix)}" do
-      block.call
-    end
+    within("##{dom_id(record, prefix)}", &block)
   end
 end
