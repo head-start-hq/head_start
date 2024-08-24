@@ -11,7 +11,7 @@
     "moduleResolution": "bundler",
     "noEmit": true,
     "paths": {
-      "~/*": ["app/assets/*"]
+      "~/*": ["app/frontend/*"]
     },
     "sourceMap": false,
     "strict": true,
@@ -19,5 +19,5 @@
     "target": "ESNext",
     "useDefineForClassFields": false
   },
-  "include": ["app/assets/**/*"]
+  "include": ["app/frontend/**/*"]
 }
