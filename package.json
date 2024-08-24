@@ -23,7 +23,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.3.3",
     "typescript": "^5.5.4",
-    "vite": "^5.2.10",
+    "vite": "^5.0.0",
     "vite-plugin-ruby": "^5.0.0"
   }
 }
