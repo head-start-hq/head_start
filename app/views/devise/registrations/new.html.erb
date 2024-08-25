@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {data: {js_detect_time_zone: ""}}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -20,6 +20,8 @@
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
+
+  <%= f.hidden_field :time_zone_offset, data: {js_time_zone_offset: ""}, allow_method_names_outside_object: true %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
