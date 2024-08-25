@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
+"@ambiki/impulse@0.5.0-beta.1":
+  version "0.5.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@ambiki/impulse/-/impulse-0.5.0-beta.1.tgz#049eb6bd3d51d86170712d502942de1f21203003"
+  integrity sha512-GEtpItUVa9q7G4PZewzNjfDJ24ap27uI3eh2JdZQjFEvTle6rCMQO5W7k304LZ7OYtOIXJZ+8fOCYjFzZsNdnQ==
+
 "@csstools/selector-resolve-nested@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@csstools/selector-resolve-nested/-/selector-resolve-nested-2.0.0.tgz#826e05f6971c334a12d86e2394129d62d4f19104"
