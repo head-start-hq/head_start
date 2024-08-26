@@ -1,4 +1,4 @@
-import { ElementObserver } from '@ambiki/impulse';
+import { ElementObserver, ElementObserverDelegate } from '@ambiki/impulse';
 
 type Options<T> = {
   connected?: (element: T) => void;
@@ -24,22 +24,16 @@ type Options<T> = {
  * });
  */
 export function observe<T extends Element = Element>(selector: string, options: Options<T> = {}) {
-  class Delegate {
+  class Delegate implements ElementObserverDelegate {
     elementConnected(element: Element) {
-      const elements = this.getMatchingElements(element);
-      for (const ele of elements) {
-        options.connected?.(ele);
-      }
+      options.connected?.(element as T);
     }
 
     elementDisconnected(element: Element) {
-      const elements = this.getMatchingElements(element);
-      for (const ele of elements) {
-        options.disconnected?.(ele);
-      }
+      options.disconnected?.(element as T);
     }
 
-    private getMatchingElements(element: Element) {
+    getMatchingElements(element: Element) {
       const elements = Array.from(element.querySelectorAll<T>(selector));
       if (element.hasAttribute(selector)) {
         elements.unshift(element as T);
@@ -48,12 +42,7 @@ export function observe<T extends Element = Element>(selector: string, options: 
     }
   }
 
-  const owner = document.documentElement;
   const delegate = new Delegate();
-  const observer = new ElementObserver(owner, delegate, { attributeFilter: [selector] });
-  if (owner.isConnected) {
-    delegate.elementConnected(document.documentElement);
-  }
-
+  const observer = new ElementObserver(document.documentElement, delegate, { attributeFilter: [selector] });
   observer.start();
 }
